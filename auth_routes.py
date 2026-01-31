@@ -63,6 +63,7 @@ async def login(login_schema: LoginSchema, session: Session = Depends(pegar_sess
                 "refresh_token": refresh_token,
                 "token_type": "Bearer"
                 }
+#-------------------------------------------------------------------------------------------------------------------------------------------------
 
 # login => email e senha => tokem jwt (Json web token)
 @auth_router.post("/login_form")
