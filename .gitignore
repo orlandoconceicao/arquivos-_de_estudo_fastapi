@@ -1,4 +1,23 @@
-txt.txt
+# Byte-compiled / optimized / DLL files
+/__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
 banco.db
-**/__pycache__/
+*.sqlite3
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets and Configs
 .env
+txt.txt
+
+# IDEs
+.vscode/
+.idea/
