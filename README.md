@@ -36,8 +36,8 @@ Este projeto tem como objetivo consolidar conhecimentos em:
 
 ## 📁 Estrutura do projeto
 
-```bash
-.
+bash
+
 ├── app/
 │   ├── main.py        # Ponto de entrada da aplicação
 │   ├── routes/        # Definição das rotas da API
