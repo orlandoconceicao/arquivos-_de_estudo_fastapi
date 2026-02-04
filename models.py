@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
-from sqlalchemy.orm import declarative_base 
+from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy_utils.types import ChoiceType
 
 db = create_engine("sqlite:///banco.db")
@@ -45,12 +45,23 @@ class Pedido(Base):
     status = Column("status", String) # pendente, cancelado, finalizado
     usuario = Column("usuario",  ForeignKey("usuarios.id"))
     preco = Column("preco", Float)
-    #item =
+    itens = relationship("ItemPedido", cascade="all, delete")
     
     def __init__(self, usuario, status="PENDENTE", preco=0): # Quando o banco de dados for criado nao vai ter preço ainda e nem status por issocoloca usuario="pendente e preco+0"
         self.usuario = usuario
         self.status = status
         self.preco = preco
+        
+    def calcular_preco(self):
+        # percorrer todos os itens de pedido
+        # somar todos os precos dde todos os itens dospedidos 
+        # editar no campo "preco" o valor final do preco do pedido
+        #preco_pedido = 0
+        #for item in self.itens:
+        #    preco_item = item.preco_unitario * item.quantidade
+        #    preco_pedido += preco_item
+        # isso tudo e a mesma coisa que essa linha de baixo
+        self.preco = sum(item.preco_unitario * item.quantidade for item in self.itens)
     
 # Itens de pedido
 class ItemPedido(Base):
@@ -74,3 +85,6 @@ class ItemPedido(Base):
 
 
 # Executar e criar os metodos do seu banco
+
+# Criar migração: alembic revision --autogenerete -m "Alterar banco de dados"
+# Executar a migração: alembic upgrade head
