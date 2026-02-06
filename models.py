@@ -45,7 +45,12 @@ class Pedido(Base):
     status = Column("status", String) # pendente, cancelado, finalizado
     usuario = Column("usuario",  ForeignKey("usuarios.id"))
     preco = Column("preco", Float)
-    itens = relationship("ItemPedido", cascade="all, delete")
+    itens = relationship(
+        "ItemPedido",
+        back_populates="pedido_rel",
+        cascade="all, delete",
+        lazy="joined"
+    )
     
     def __init__(self, usuario, status="PENDENTE", preco=0): # Quando o banco de dados for criado nao vai ter preço ainda e nem status por issocoloca usuario="pendente e preco+0"
         self.usuario = usuario
@@ -65,7 +70,7 @@ class Pedido(Base):
     
 # Itens de pedido
 class ItemPedido(Base):
-    __tablename__ = "itenspedido"
+    __tablename__ = "itens_pedido"
     
     ## talvez crie tupla de sabor ou em outro arq e de tamanhos tambem depois puxa aqui
     
@@ -75,6 +80,10 @@ class ItemPedido(Base):
     tamanho = Column("tamanho", String)
     preco_unitario = Column("preco_unitario", Float)
     pedido = Column("pedido", ForeignKey("pedidos.id"))
+    pedido_rel = relationship(
+        "Pedido",
+        back_populates="itens"
+    )
         
     def __init__(self, quantidade, sabor, tamanho, preco_unitario, pedido):
         self.quantidade = quantidade
@@ -86,5 +95,5 @@ class ItemPedido(Base):
 
 # Executar e criar os metodos do seu banco
 
-# Criar migração: alembic revision --autogenerete -m "Alterar banco de dados"
+# Criar migração: alembic revision --autogenerate -m "Alterar banco de dados"
 # Executar a migração: alembic upgrade head
