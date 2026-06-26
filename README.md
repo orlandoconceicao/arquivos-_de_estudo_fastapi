@@ -1,16 +1,16 @@
-﻿# 🚀 API REST com FastAPI
+﻿# API REST com FastAPI
 
 Projeto backend desenvolvido para praticar e consolidar a construção de APIs REST modernas com **FastAPI**, utilizando **PostgreSQL**, **SQLAlchemy**, **Alembic** e boas práticas de organização de código.  
 
 ---
 
-## 📌 Links do Projeto
-- 📘 **API em produção (Swagger):** [Visualizar Documentação](https://fastapi-studies.onrender.com/docs)
-- 📂 **Repositório GitHub:** [Acessar Código](https://github.com)
+## Links do Projeto
+- **API em produção (Swagger):** [Visualizar Documentação](https://fastapi-studies.onrender.com/docs)
+- **Repositório GitHub:** [Acessar Código](https://github.com)
 
 ---
 
-## 🎯 Objetivo do projeto
+## Objetivo do projeto
 Este projeto tem como objetivo fortalecer conhecimentos em:
 - [x] Desenvolvimento de APIs REST com FastAPI
 - [x] Criação de endpoints (**GET, POST, PUT, DELETE**)
@@ -23,7 +23,7 @@ Este projeto tem como objetivo fortalecer conhecimentos em:
 
 ---
 
-## 🛠️ Decisões técnicas
+## Decisões técnicas
 > "A escolha das tecnologias focou em performance, segurança e escalabilidade da aplicação."
 
 | Nome | Tecnologia |
@@ -35,7 +35,7 @@ Este projeto tem como objetivo fortalecer conhecimentos em:
 
 ---
 
-## 💻 Tecnologias utilizadas
+## Tecnologias utilizadas
 - Python 3.10+
 - FastAPI
 - Uvicorn
@@ -46,7 +46,7 @@ Este projeto tem como objetivo fortalecer conhecimentos em:
 
 ---
 
-## 📂 Estrutura do projeto
+## Estrutura do projeto
 ```text
 app/
  ├── main.py          # Ponto de entrada da aplicação
@@ -59,12 +59,12 @@ app/
 
 ---
 
-## 🗄️ Banco de dados (PostgreSQL)
+## Banco de dados (PostgreSQL)
 O projeto utiliza **PostgreSQL** como banco de dados principal.  
 A conexão é feita através de uma URL no formato:  
 `postgresql://usuario:senha@host:porta/nome_do_banco`  
 
-### 🧪 Migrações com Alembic
+### Migrações com Alembic
 Todo o controle de criação e atualização do banco é feito com Alembic.  
 
 1. Gere a migração:  
@@ -79,7 +79,7 @@ alembic upgrade head
 
 ---
 
-## 🚀 Como executar o projeto localmente
+## Como executar o projeto localmente
 
 1. **Clone o repositório**  
 ```bash
@@ -103,7 +103,7 @@ uvicorn app.main:app --reload
 
 ---
 
-## ✅ Status do projeto
+## Status do projeto
 - [x] API funcional  
 - [x] Banco de dados integrado  
 - [x] Migrações configuradas  
@@ -112,7 +112,7 @@ uvicorn app.main:app --reload
 
 ---
 
-## 👤 Autor
+## Autor
 **Orlando Conceição**  
 *Back-end Developer*  
-📧 **Contato:** [orlandoconceicao94@gmail.com](mailto:orlandoconceicao94@gmail.com)
+**Contato:** [orlandoconceicao94@gmail.com](mailto:orlandoconceicao94@gmail.com)
