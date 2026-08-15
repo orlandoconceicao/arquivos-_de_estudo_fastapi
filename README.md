@@ -113,6 +113,8 @@ uvicorn app.main:app --reload
 ---
 
 ## Autor
-**Orlando Conceição**  
-*Back-end Developer*  
-**Contato:** [orlandoconceicao94@gmail.com](mailto:orlandoconceicao94@gmail.com)
+**Orlando Conceição Vilhalba de Almeida**
+
+Desenvolvedor Backend em formação, com foco em Python, APIs REST, FastAPI e bancos de dados relacionais.
+
+GitHub: [orlandoconceicao](https://github.com/orlandoconceicao)
