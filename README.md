@@ -1,6 +1,6 @@
-﻿# API REST com FastAPI
+# API REST com FastAPI
 
-Projeto backend desenvolvido para praticar e consolidar a construção de APIs REST modernas com **FastAPI**, utilizando **PostgreSQL**, **SQLAlchemy**, **Alembic** e boas práticas de organização de código.  
+Projeto backend desenvolvido para praticar e consolidar a construção de APIs REST modernas com **FastAPI**, utilizando **PostgreSQL**, **SQLAlchemy**, **Alembic** e boas práticas de organização de código.
 
 ---
 
@@ -60,19 +60,19 @@ app/
 ---
 
 ## Banco de dados (PostgreSQL)
-O projeto utiliza **PostgreSQL** como banco de dados principal.  
-A conexão é feita através de uma URL no formato:  
-`postgresql://usuario:senha@host:porta/nome_do_banco`  
+O projeto utiliza **PostgreSQL** como banco de dados principal.
+A conexão é feita através de uma URL no formato:
+`postgresql://usuario:senha@host:porta/nome_do_banco`
 
 ### Migrações com Alembic
-Todo o controle de criação e atualização do banco é feito com Alembic.  
+Todo o controle de criação e atualização do banco é feito com Alembic.
 
-1. Gere a migração:  
+1. Gere a migração:
 ```bash
 alembic revision --autogenerate -m "descricao da migracao"
 ```
 
-2. Aplique no banco:  
+2. Aplique no banco:
 ```bash
 alembic upgrade head
 ```
@@ -81,20 +81,20 @@ alembic upgrade head
 
 ## Como executar o projeto localmente
 
-1. **Clone o repositório**  
+1. **Clone o repositório**
 ```bash
 git clone https://github.com
 cd fastapi-studies
 ```
 
-2. **Ambiente Virtual**  
-Linux/Mac:  
-`python -m venv venv && source venv/bin/activate`  
+2. **Ambiente Virtual**
+Linux/Mac:
+`python -m venv venv && source venv/bin/activate`
 
-Windows:  
-`python -m venv venv && venv\Scripts\activate`  
+Windows:
+`python -m venv venv && venv\Scripts\activate`
 
-3. **Dependências e Execução**  
+3. **Dependências e Execução**
 ```bash
 pip install -r requirements.txt
 alembic upgrade head
@@ -104,17 +104,22 @@ uvicorn app.main:app --reload
 ---
 
 ## Status do projeto
-- [x] API funcional  
-- [x] Banco de dados integrado  
-- [x] Migrações configuradas  
-- [x] Documentação automática  
-- [x] Deploy em produção  
+- [x] API funcional
+- [x] Banco de dados integrado
+- [x] Migrações configuradas
+- [x] Documentação automática
+- [x] Deploy em produção
 
 ---
 
 ## Autor
+
 **Orlando Conceição Vilhalba de Almeida**
 
-Desenvolvedor Backend em formação, com foco em Python, APIs REST, FastAPI e bancos de dados relacionais.
+Desenvolvedor Backend em formação, com foco em Python, Django, Django REST Framework, PostgreSQL, APIs REST e Docker, utilizando React como tecnologia complementar para integração das aplicações.
 
-GitHub: [orlandoconceicao](https://github.com/orlandoconceicao)
+GitHub: [[github.com/orlandoconceicao](https://github.com/orlandoconceicao)](https://github.com/orlandoconceicao)
+
+LinkedIn: [[linkedin.com/in/orlando-conceição-582234315](https://www.linkedin.com/in/orlando-concei%C3%A7%C3%A3o-582234315)](https://www.linkedin.com/in/orlando-concei%C3%A7%C3%A3o-582234315)
+
+Portfólio: [[orlandoconceicao.github.io](https://orlandoconceicao.github.io/)](https://orlandoconceicao.github.io)
