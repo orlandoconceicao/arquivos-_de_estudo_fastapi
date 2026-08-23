@@ -1,116 +1,68 @@
 # API REST com FastAPI
 
-Projeto backend desenvolvido para praticar e consolidar a construção de APIs REST modernas com **FastAPI**, utilizando **PostgreSQL**, **SQLAlchemy**, **Alembic** e boas práticas de organização de código.
+API de estudos para autenticação de usuários e gerenciamento de pedidos, desenvolvida com FastAPI e SQLAlchemy.
 
----
+## Sobre o projeto
 
-## Links do Projeto
-- **API em produção (Swagger):** [Visualizar Documentação](https://fastapi-studies.onrender.com/docs)
-- **Repositório GitHub:** [Acessar Código](https://github.com)
+O projeto implementa cadastro e login com tokens JWT, além de operações autenticadas para criar, consultar, alterar o estado e gerenciar os itens de pedidos. A estrutura do banco é versionada com Alembic.
 
----
+## Funcionalidades
 
-## Objetivo do projeto
-Este projeto tem como objetivo fortalecer conhecimentos em:
-- [x] Desenvolvimento de APIs REST com FastAPI
-- [x] Criação de endpoints (**GET, POST, PUT, DELETE**)
-- [x] Integração com banco de dados **PostgreSQL**
-- [x] Versionamento do banco com **Alembic** (migrações)
-- [x] Validação e tipagem de dados com **Pydantic**
-- [x] Organização profissional de projetos backend
-- [x] Uso de documentação automática (**Swagger / Redoc**)
-- [x] Testes manuais diretamente pela API
+- criação de contas de usuário;
+- autenticação com JWT e renovação de token;
+- criação e consulta de pedidos;
+- inclusão e remoção de itens;
+- cancelamento e finalização de pedidos;
+- documentação automática com Swagger e ReDoc.
 
----
+## Tecnologias
 
-## Decisões técnicas
-> "A escolha das tecnologias focou em performance, segurança e escalabilidade da aplicação."
-
-| Nome | Tecnologia |
-|------|------------|
-| API  | FastAPI    |
-| DB   | PostgreSQL |
-| ORM  | SQLAlchemy |
-| Migrações | Alembic |
-
----
-
-## Tecnologias utilizadas
-- Python 3.10+
-- FastAPI
-- Uvicorn
-- Pydantic
+- Python
+- FastAPI e Uvicorn
 - SQLAlchemy
 - PostgreSQL
 - Alembic
+- Pydantic
+- Passlib e Python JOSE
 
----
+## Estrutura
 
-## Estrutura do projeto
 ```text
-app/
- ├── main.py          # Ponto de entrada da aplicação
- ├── database.py      # Conexão com o banco de dados
- ├── models/          # Models SQLAlchemy
- ├── schemas/         # Schemas Pydantic
- ├── routes/          # Rotas/endpoints da API
- └── __init__.py
+fastapi-studies/
+|-- main.py             # Inicialização da aplicação
+|-- auth_routes.py      # Cadastro e autenticação
+|-- order_routes.py     # Operações de pedidos
+|-- models.py           # Modelos SQLAlchemy
+|-- schemas.py          # Schemas Pydantic
+|-- database.py         # Conexão com o banco
+|-- dependencies.py     # Validação do token
+`-- alembic/            # Migrações do banco de dados
 ```
 
----
+## Como executar
 
-## Banco de dados (PostgreSQL)
-O projeto utiliza **PostgreSQL** como banco de dados principal.
-A conexão é feita através de uma URL no formato:
-`postgresql://usuario:senha@host:porta/nome_do_banco`
+Crie um ambiente virtual e instale as dependências:
 
-### Migrações com Alembic
-Todo o controle de criação e atualização do banco é feito com Alembic.
-
-1. Gere a migração:
-```bash
-alembic revision --autogenerate -m "descricao da migracao"
-```
-
-2. Aplique no banco:
-```bash
-alembic upgrade head
-```
-
----
-
-## Como executar o projeto localmente
-
-1. **Clone o repositório**
-```bash
-git clone https://github.com
+```powershell
+git clone https://github.com/orlandoconceicao/fastapi-studies.git
 cd fastapi-studies
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-2. **Ambiente Virtual**
-Linux/Mac:
-`python -m venv venv && source venv/bin/activate`
+Configure `DATABASE_URL`, `SECRET_KEY`, `ALGORITHM` e `ACCESS_TOKEN_EXPIRE_MINUTES` no ambiente. Em seguida, aplique as migrações e inicie a API:
 
-Windows:
-`python -m venv venv && venv\Scripts\activate`
-
-3. **Dependências e Execução**
-```bash
-pip install -r requirements.txt
+```powershell
 alembic upgrade head
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
----
+O Swagger ficará disponível em `http://127.0.0.1:8000/docs` e o ReDoc em `http://127.0.0.1:8000/redoc`.
 
-## Status do projeto
-- [x] API funcional
-- [x] Banco de dados integrado
-- [x] Migrações configuradas
-- [x] Documentação automática
-- [x] Deploy em produção
+## Testes
 
----
+O repositório ainda não possui uma suíte de testes automatizados.
 
 ## Autor
 
@@ -118,8 +70,8 @@ uvicorn app.main:app --reload
 
 Desenvolvedor Backend em formação, com foco em Python, Django, Django REST Framework, PostgreSQL, APIs REST e Docker, utilizando React como tecnologia complementar para integração das aplicações.
 
-GitHub: [github.com/orlandoconceicao](https://github.com/orlandoconceicao)
+GitHub: https://github.com/orlandoconceicao
 
-LinkedIn: [linkedin.com/in/orlando-conceição-582234315](https://www.linkedin.com/in/orlando-concei%C3%A7%C3%A3o-582234315)
+LinkedIn: https://www.linkedin.com/in/orlando-concei%C3%A7%C3%A3o-582234315
 
-Portfólio: [orlandoconceicao.github.io](https://orlandoconceicao.github.io)
+Portfólio: https://orlandoconceicao.github.io/
